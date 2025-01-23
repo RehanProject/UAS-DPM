@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Vitacare",
+    "slug": "vitacare",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Vitacare.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/Vitacare.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ec828106-d4d4-4133-ba52-bf246c41d34a"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/ec828106-d4d4-4133-ba52-bf246c41d34a"
+    }
+  }
+}
