@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Alert, Modal, FlatList } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
 
@@ -49,7 +48,7 @@ const RegisterScreen = ({ navigation }) => {
       style={styles.container}
     >
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={24} color="black" />
+        <Text style={{ fontSize: 40, color: 'black' }}>←</Text>
       </TouchableOpacity>
 
       <Image
@@ -94,7 +93,7 @@ const RegisterScreen = ({ navigation }) => {
         onPress={() => setIsGenderModalVisible(true)}
       >
         <Text style={styles.inputText}>{gender || 'Jenis Kelamin'}</Text>
-        <Ionicons name="chevron-down" size={20} color="#333" style={styles.dropdownIcon} />
+        <Text style={styles.dropdownText}>▼</Text>
       </TouchableOpacity>
 
       <TextInput
@@ -178,8 +177,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
-  dropdownIcon: {
-    marginLeft: 10,
+  dropdownText: {
+    fontSize: 16,
+    color: '#333',
   },
   buttonPrimary: {
     backgroundColor: '#000',

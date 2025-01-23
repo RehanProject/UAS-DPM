@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Impor AsyncStorage
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -10,12 +9,9 @@ const LoginScreen = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async () => {
-    // Mengambil data pengguna yang telah disimpan di AsyncStorage
     const userData = JSON.parse(await AsyncStorage.getItem('userData'));
 
-    // Memverifikasi username dan password
     if (userData && userData.username === username && userData.password === password) {
-      // Login berhasil, pindah ke halaman HomeScreen
       navigation.navigate('Home', { userData: userData });
     } else {
       Alert.alert("Login Gagal", "Nama pengguna atau password salah.");
@@ -28,7 +24,7 @@ const LoginScreen = ({ navigation }) => {
       style={styles.container}
     >
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={24} color="black" />
+        <Text style={{ fontSize: 40, color: 'black' }}>←</Text>
       </TouchableOpacity>
 
       <Text style={styles.title}>Hai, Selamat Datang!</Text>
@@ -49,7 +45,9 @@ const LoginScreen = ({ navigation }) => {
           onChangeText={setPassword}
         />
         <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
-          <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={24} color="gray" />
+          <Text style={{ fontSize: 10, color: showPassword ? '#FF6347' : '#6A5ACD', fontWeight: 'regular' }}>
+            {showPassword ? 'HIDE' : 'SHOW'}
+          </Text>
         </TouchableOpacity>
       </View>
 
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: 'absolute',
-    top: 40,
+    top: 30,
     left: 20,
     zIndex: 1,
   },
