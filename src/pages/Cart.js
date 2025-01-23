@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Alert } from 'react-native';
 
 const Cart = ({ navigation }) => {
-  // State untuk kuantitas produk dan daftar item keranjang
-  const [quantity, setQuantity] = useState(1);
+  // State untuk daftar item keranjang
   const [cartItems, setCartItems] = useState([
-    { name: 'OBH Combi', size: '75ml', price: 'Rp 5.000', image: require('../assets/icons/obh.png') },
+    { name: 'OBH Combi', size: '75ml', price: 5000, quantity: 1, image: require('../assets/icons/obh.png') },
     // Tambahkan item lainnya sesuai kebutuhan
   ]);
 
@@ -13,41 +12,34 @@ const Cart = ({ navigation }) => {
   const handleStatusClick = (status) => {
     console.log(`Status ${status} diklik!`);
     if (status === 'Belum Bayar') {
-      // Navigasi ke halaman Cart2 jika status yang dipilih adalah "Belum Bayar"
       navigation.navigate('Cart2');
     } else if (status === 'Dikemas') {
-      // Navigasi ke halaman Cart3 jika status yang dipilih adalah "Dikemas"
       navigation.navigate('Cart3');
     } else if (status === 'Dikirim') {
-      // Navigasi ke halaman Cart4 jika status yang dipilih adalah "Dikirim"
       navigation.navigate('Cart4');
     } else if (status === 'Selesai') {
-      // Navigasi ke halaman Cart5 jika status yang dipilih adalah "Selesai"
       navigation.navigate('Cart5');
     }
   };
-  
 
-  // Fungsi untuk menambah kuantitas
-  const incrementQuantity = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
+  // Fungsi untuk menambah kuantitas item
+  const incrementQuantity = (itemName) => {
+    setCartItems(prevItems => 
+      prevItems.map(item => 
+        item.name === itemName ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
   };
 
-  // Fungsi untuk mengurangi kuantitas
-  const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(prevQuantity => prevQuantity - 1);
-    } else {
-      // Jika kuantitas kurang dari 1, tampilkan konfirmasi
-      Alert.alert(
-        'Hapus Barang',
-        'Kuantitas sudah mencapai 0. Apakah Anda yakin ingin menghapus barang ini?',
-        [
-          { text: 'Tidak', style: 'cancel' },
-          { text: 'Ya', onPress: () => handleDeleteItem('OBH Combi') },
-        ]
-      );
-    }
+  // Fungsi untuk mengurangi kuantitas item
+  const decrementQuantity = (itemName) => {
+    setCartItems(prevItems => 
+      prevItems.map(item => 
+        item.name === itemName && item.quantity > 1 
+        ? { ...item, quantity: item.quantity - 1 } 
+        : item
+      )
+    );
   };
 
   // Fungsi untuk menghapus item dari keranjang
@@ -57,7 +49,24 @@ const Cart = ({ navigation }) => {
 
   // Fungsi untuk menambah item ke keranjang
   const addItemToCart = (item) => {
-    setCartItems(prevItems => [...prevItems, item]);
+    setCartItems(prevItems => {
+      // Check if the item already exists in the cart
+      const itemExists = prevItems.find(cartItem => cartItem.name === item.name);
+      if (itemExists) {
+        // If it exists, update the quantity
+        return prevItems.map(cartItem =>
+          cartItem.name === item.name ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        );
+      } else {
+        // If it doesn't exist, add it to the cart
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
+  };
+
+  // Fungsi untuk menghitung total harga
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   return (
@@ -93,16 +102,16 @@ const Cart = ({ navigation }) => {
             <Text style={styles.itemName}>{item.name}</Text>
             <Text style={styles.itemSize}>{item.size}</Text>
             <View style={styles.itemControls}>
-              <TouchableOpacity onPress={decrementQuantity} style={styles.quantityButton}>
+              <TouchableOpacity onPress={() => decrementQuantity(item.name)} style={styles.quantityButton}>
                 <Text style={styles.buttonText}>-</Text>
               </TouchableOpacity>
-              <Text style={styles.quantityText}>{quantity}</Text>
-              <TouchableOpacity onPress={incrementQuantity} style={styles.quantityButton}>
+              <Text style={styles.quantityText}>{item.quantity}</Text>
+              <TouchableOpacity onPress={() => incrementQuantity(item.name)} style={styles.quantityButton}>
                 <Text style={styles.buttonText}>+</Text>
               </TouchableOpacity>
             </View>
           </View>
-          <Text style={styles.itemPrice}>{item.price}</Text>
+          <Text style={styles.itemPrice}>Rp {item.price * item.quantity}</Text>
           {/* Tombol Delete untuk menghapus item */}
           <TouchableOpacity onPress={() => handleDeleteItem(item.name)}>
             <Image source={require('../assets/icons/delete.png')} style={styles.trashIcon} />
@@ -113,10 +122,10 @@ const Cart = ({ navigation }) => {
       {/* Additional Items */}
       <View style={styles.additionalItemsContainer}>
         {[ // Data untuk tambahan item
-          { name: 'OBH Combi', size: '75ml', price: 'Rp 5.000', image: require('../assets/icons/obh.png') },
-          { name: 'Bodrexin', size: '75ml', price: 'Rp 6.000', image: require('../assets/icons/obh.png') },
-          { name: 'Betadine', size: '50ml', price: 'Rp 30.000', image: require('../assets/icons/obh.png') },
-          { name: 'Panadol', size: '20pcs', price: 'Rp 25.000', image: require('../assets/icons/obh.png') },
+          { name: 'OBH Combi', size: '75ml', price: 5000, image: require('../assets/icons/obh.png') },
+          { name: 'Bodrexin', size: '75ml', price: 6000, image: require('../assets/icons/obh.png') },
+          { name: 'Betadine', size: '50ml', price: 30000, image: require('../assets/icons/obh.png') },
+          { name: 'Panadol', size: '20pcs', price: 25000, image: require('../assets/icons/obh.png') },
         ].map((item, index) => (
           <View key={index} style={styles.additionalItem}>
             <Image source={item.image} style={styles.additionalItemImage} />
@@ -124,7 +133,7 @@ const Cart = ({ navigation }) => {
               <Text style={styles.additionalItemName}>{item.name}</Text>
               <Text style={styles.additionalItemSize}>{item.size}</Text>
               <View style={styles.additionalItemBottomRow}>
-                <Text style={styles.additionalItemPrice}>{item.price}</Text>
+                <Text style={styles.additionalItemPrice}>Rp {item.price}</Text>
                 <TouchableOpacity style={styles.addButton} onPress={() => addItemToCart(item)}>
                   <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
@@ -132,6 +141,11 @@ const Cart = ({ navigation }) => {
             </View>
           </View>
         ))}
+      </View>
+
+      {/* Total Price */}
+      <View style={styles.totalContainer}>
+        <Text style={styles.totalText}>Total Harga: Rp {calculateTotalPrice()}</Text>
       </View>
     </ScrollView>
   );
@@ -177,13 +191,10 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     marginBottom: 5,
-    marginRight: 25,
   },
   statusText: {
     fontSize: 12,
     color: '#666',
-    textAlign: 'center',
-    marginRight: 20,
   },
   cartItem: {
     flexDirection: 'row',
@@ -222,7 +233,6 @@ const styles = StyleSheet.create({
     height: 25,
     backgroundColor: '#34C759',
     borderRadius: 5,
-    marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 5,
@@ -308,6 +318,18 @@ const styles = StyleSheet.create({
   addButtonText: {
     fontSize: 18,
     color: '#fff',
+  },
+  totalContainer: {
+    padding: 20,
+    marginTop: 20,
+    backgroundColor: '#F5F5F5',
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  totalText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#34C759',
   },
 });
 
