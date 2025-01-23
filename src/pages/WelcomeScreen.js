@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; // Ganti ke expo-linear-gradient
+import { LinearGradient } from 'expo-linear-gradient'; 
 
 const WelcomeScreen = ({ navigation }) => {
   return (
@@ -10,7 +10,7 @@ const WelcomeScreen = ({ navigation }) => {
     >
       {/* Logo */}
       <Image
-        source={require('../assets/icons/logo.png')} // Pastikan path gambar logo benar
+        source={require('../assets/icons/logo.png')} 
         style={styles.logo}
       />
 
@@ -67,25 +67,25 @@ const styles = StyleSheet.create({
   buttonPrimary: {
     width: '80%',
     paddingVertical: 15,
-    backgroundColor: '#000', // Warna hitam
+    backgroundColor: '#000', 
     borderRadius: 25,
     alignItems: 'center',
     marginBottom: 15,
   },
   buttonTextPrimary: {
-    color: '#fff', // Warna teks putih
+    color: '#fff', 
     fontSize: 16,
     fontWeight: 'bold',
   },
   buttonSecondary: {
     width: '80%',
     paddingVertical: 15,
-    backgroundColor: '#fff', // Warna putih
+    backgroundColor: '#fff', 
     borderRadius: 25,
     alignItems: 'center',
   },
   buttonTextSecondary: {
-    color: '#000', // Warna teks hitam
+    color: '#000', 
     fontSize: 16,
     fontWeight: 'bold',
   },

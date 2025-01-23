@@ -75,11 +75,11 @@ const styles = StyleSheet.create({
     tintColor: '#000',
   },
   header: {
-    marginTop: 120, // Adjust the margin to create space for the back button
-    marginBottom: 20, // Add space between the title and next section
+    marginTop: 120, 
+    marginBottom: 20, 
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 2, // Ensures content appears above map
+    zIndex: 2,
   },
   title: {
     fontSize: 24,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
     elevation: 3,
-    zIndex: 3, // Makes sure the search bar is above the map
+    zIndex: 3, 
   },
   searchIcon: {
     width: 15,
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 300,
     resizeMode: 'cover',
-    marginTop: -60, // Adds space between the search container and the map
-    zIndex: 1, // Keeps the map image behind the content
+    marginTop: -60,
+    zIndex: 1, 
   },
   locationConfirmBox: {
     backgroundColor: '#fff',
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
     elevation: 3,
-    marginTop: 30, // Moves the confirmation box below the map image
+    marginTop: 30, 
   },
   locationConfirmTitle: {
     fontSize: 18,

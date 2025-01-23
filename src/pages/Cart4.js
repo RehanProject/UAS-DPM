@@ -26,15 +26,14 @@ const Cart4 = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Back Button */}
+   
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
         <Image source={require('../assets/icons/back.png')} style={styles.backIcon} />
       </TouchableOpacity>
 
-      {/* Title */}
       <Text style={styles.title}>Pesanan Saya</Text>
 
-      {/* Status Tabs */}
+     
       <View style={styles.statusContainer}>
         {[ 
           { status: 'Belum Bayar', icon: require('../assets/icons/belumbayar.png'), isHighlighted: false },
@@ -55,7 +54,6 @@ const Cart4 = ({ navigation }) => {
         ))}
       </View>
 
-      {/* Combined Order and Delivery Info */}
       {!isOrderReceived ? (
         <View style={styles.orderAndDeliveryContainer}>
           <View style={styles.productContainer}>
@@ -70,7 +68,7 @@ const Cart4 = ({ navigation }) => {
             </View>
           </View>
 
-          {/* Delivery Info */}
+         
           <View style={styles.deliveryContainer}>
             <Image source={require('../assets/icons/pesananditerima.png')} style={styles.deliveryIcon} />
             <View style={styles.deliveryInfo}>

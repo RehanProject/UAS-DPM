@@ -95,7 +95,6 @@ const DetailAmbulance = ({ navigation }) => {
               Pembayaran Anda telah berhasil, Anda dapat menunggu barang pesanan Anda sampai ke alamat tujuan.
             </Text>
 
-            {/* Green Button to go back to Home */}
             <TouchableOpacity style={styles.greenButton} onPress={() => navigation.navigate('Home')}>
               <Text style={styles.greenButtonText}>Kembali ke Beranda</Text>
             </TouchableOpacity>
@@ -144,9 +143,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   ambulanceInfoContainer: {
-    flexDirection: 'row', // Untuk menempatkan gambar dan harga dalam satu baris
-    justifyContent: 'space-between', // Membuat elemen-elemen tersebut tersebar
-    alignItems: 'center', // Vertikal center untuk gambar dan harga
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
   },
   ambulanceImage: {
     width: 150,
@@ -164,8 +163,8 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 10, // Jarak antara gambar dan harga
-    marginTop: 90,  // Menurunkan posisi teks harga
+    marginLeft: 10, 
+    marginTop: 90,  
   },
   paymentDetails: {
     paddingHorizontal: 16,
@@ -266,7 +265,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Ngeblur background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContainer: {
     backgroundColor: '#fff',

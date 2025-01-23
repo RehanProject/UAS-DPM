@@ -47,15 +47,15 @@ const Cart2 = ({ navigation }) => {
   };
   return (
     <ScrollView style={styles.container}>
-      {/* Back Button */}
+      
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
         <Image source={require('../assets/icons/back.png')} style={styles.backIcon} />
       </TouchableOpacity>
 
-      {/* Title */}
+      
       <Text style={styles.title}>Keranjang Saya</Text>
 
-      {/* Status Tabs */}
+     
       <View style={styles.statusContainer}>
         {[ 
           { status: 'Belum Bayar', icon: require('../assets/icons/belumbayar2.png'), isHighlighted: true },
@@ -72,7 +72,7 @@ const Cart2 = ({ navigation }) => {
         ))}
       </View>
 
-      {/* Empty Cart Message or Cart Items */}
+      
       {showEmptyCartMessage ? (
         <View style={styles.emptyCartContainer}>
           <Image source={require('../assets/icons/keranjang.png')} style={styles.emptyCartIcon} />
@@ -96,7 +96,7 @@ const Cart2 = ({ navigation }) => {
         </View>
       )}
 
-      {/* Additional Items */}
+ 
       <View style={styles.additionalItemsContainer}>
         {[ 
           { name: 'OBH Combi', size: '75ml', price: 'Rp 5.000', image: require('../assets/icons/obh.png') },
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   highlightedStatus: {
-    color: '#34C759', // Warna hijau yang diminta untuk "Belum Bayar"
+    color: '#34C759', 
   },
   emptyCartContainer: {
     justifyContent: 'center',

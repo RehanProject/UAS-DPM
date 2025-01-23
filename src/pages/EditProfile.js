@@ -8,7 +8,7 @@ const EditProfile = ({ navigation }) => {
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [gender, setGender] = useState(''); // State for gender
+  const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
   const [dataSaved, setDataSaved] = useState(false);
 

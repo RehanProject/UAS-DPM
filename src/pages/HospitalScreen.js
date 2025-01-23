@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
     elevation: 3,
-    zIndex: 3, // Makes sure the search bar is above the map
+    zIndex: 3, 
   },
   searchIcon: {
     width: 15,

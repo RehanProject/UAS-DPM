@@ -22,7 +22,7 @@ const PharmacyScreen = ({ navigation }) => {
         <Text style={styles.productPrice}>{item.price}</Text>
         <TouchableOpacity
           style={styles.addButton}
-          onPress={() => navigation.navigate('DetailScreen', { product: item })}  // Navigate to DetailScreen
+          onPress={() => navigation.navigate('DetailScreen', { product: item })} 
         >
           <Text style={styles.addButtonText}>+</Text>
         </TouchableOpacity>
@@ -42,7 +42,7 @@ const PharmacyScreen = ({ navigation }) => {
         <Text style={styles.title}>Apotek</Text>
       </View>
 
-      {/* Search Bar */}
+  
       <View style={styles.searchContainer}>
         <Image source={require('../assets/icons/search.png')} style={styles.searchIcon} />
         <TextInput
@@ -73,7 +73,6 @@ const PharmacyScreen = ({ navigation }) => {
         />
       </View>
 
-      {/* Sold Products */}
       <View style={styles.sectionContainer}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Produk Dijual</Text>
@@ -92,7 +91,7 @@ const PharmacyScreen = ({ navigation }) => {
         />
       </View>
 
-      {/* Additional Content or Products */}
+     
       <View style={styles.sectionContainer}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Produk Lainnya</Text>

@@ -1,5 +1,7 @@
-// index.js (Root File)
 import { registerRootComponent } from 'expo';
-import App from './App';  // Impor App dari App.js
+import App from './App'; 
 
-registerRootComponent(App);  // Gunakan App sebagai komponen utama aplikasi
+
+registerRootComponent(App);
+
+export default App; 

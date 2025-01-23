@@ -3,12 +3,12 @@ import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Modal } fr
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Profile = ({ navigation }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false); // To control the logout confirmation modal
+  const [isModalVisible, setIsModalVisible] = useState(false); 
   const [userData, setUserData] = useState({
     userName: 'Rosni Dwita',
   });
 
-  // Fetch user data from AsyncStorage when the component mounts
+ 
   useEffect(() => {
     const loadUserData = async () => {
       try {
@@ -25,12 +25,12 @@ const Profile = ({ navigation }) => {
     };
 
     loadUserData();
-  }, []); // Run once when the component mounts
+  }, []);
 
   const handleLogout = () => {
-    // Navigate to LoginScreen without exiting the app
+   
     navigation.navigate('LoginScreen');
-    setIsModalVisible(false); // Close logout confirmation modal
+    setIsModalVisible(false); 
   };
 
   return (
@@ -38,7 +38,7 @@ const Profile = ({ navigation }) => {
       {/* Foto Profil */}
       <View style={styles.profileContainer}>
         <Image
-          source={require('../assets/icons/profil.png')} // Replace with appropriate profile picture
+          source={require('../assets/icons/profil.png')} 
           style={styles.profileImage}
         />
         <Text style={styles.name}>{userData.userName}</Text>
@@ -47,7 +47,7 @@ const Profile = ({ navigation }) => {
       {/* Edit Profile Button */}
       <TouchableOpacity
         style={styles.editButton}
-        onPress={() => navigation.navigate('EditProfile', { userData })} // Pass userData to EditProfile
+        onPress={() => navigation.navigate('EditProfile', { userData })} 
       >
         <Text style={styles.editButtonText}>Edit Profile</Text>
       </TouchableOpacity>
@@ -56,12 +56,12 @@ const Profile = ({ navigation }) => {
       <View style={styles.sectionContainer}>
         <TouchableOpacity style={styles.itemContainer} onPress={() => console.log("Navigating to Saved Articles")}>
           <Image
-            source={require('../assets/icons/love.png')} // Replace with the appropriate love icon
+            source={require('../assets/icons/love.png')} 
             style={styles.icon}
           />
           <Text style={styles.itemText}>Artikel Disimpan</Text>
           <Image
-            source={require('../assets/icons/panahkesamping.png')} // Replace with the appropriate arrow icon
+            source={require('../assets/icons/panahkesamping.png')} 
             style={styles.arrowIcon}
           />
         </TouchableOpacity>
@@ -71,12 +71,12 @@ const Profile = ({ navigation }) => {
       <View style={styles.sectionContainer}>
         <TouchableOpacity style={styles.itemContainer} onPress={() => console.log("Navigating to FAQs")}>
           <Image
-            source={require('../assets/icons/faqs.png')} // Replace with the appropriate FAQ icon
+            source={require('../assets/icons/faqs.png')}
             style={styles.icon}
           />
           <Text style={styles.itemText}>FAQs</Text>
           <Image
-            source={require('../assets/icons/panahkesamping.png')} // Replace with the appropriate arrow icon
+            source={require('../assets/icons/panahkesamping.png')}
             style={styles.arrowIcon}
           />
         </TouchableOpacity>
@@ -86,23 +86,23 @@ const Profile = ({ navigation }) => {
       <View style={styles.sectionContainer}>
         <TouchableOpacity style={styles.itemContainer} onPress={() => setIsModalVisible(true)}>
           <Image
-            source={require('../assets/icons/keluar.png')} // Replace with the appropriate logout icon
+            source={require('../assets/icons/keluar.png')}
             style={styles.icon}
           />
           <Text style={styles.itemText}>Keluar</Text>
           <Image
-            source={require('../assets/icons/panahkesamping.png')} // Replace with the appropriate arrow icon
+            source={require('../assets/icons/panahkesamping.png')} 
             style={styles.arrowIcon}
           />
         </TouchableOpacity>
       </View>
 
-      {/* Logout Confirmation Modal */}
+      
       <Modal
         transparent={true}
         visible={isModalVisible}
         animationType="fade"
-        onRequestClose={() => setIsModalVisible(false)} // Close the modal when tapping outside
+        onRequestClose={() => setIsModalVisible(false)} 
       >
         <View style={styles.modalBackground}>
           <View style={styles.modalContainer}>
@@ -112,7 +112,7 @@ const Profile = ({ navigation }) => {
             <View style={styles.modalButtonContainer}>
               <TouchableOpacity
                 style={styles.cancelButton}
-                onPress={() => setIsModalVisible(false)} // Close modal without logging out
+                onPress={() => setIsModalVisible(false)} 
               >
                 <Text style={styles.cancelButtonText}>Batal</Text>
               </TouchableOpacity>

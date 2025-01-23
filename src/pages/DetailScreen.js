@@ -96,7 +96,7 @@ const DetailScreen = ({ navigation }) => {
          <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buyButton}
-            onPress={() => navigation.navigate('LocationDetailScreen')} // Navigate to LocationDetailScreen
+            onPress={() => navigation.navigate('LocationDetailScreen')} 
           >
             <Text style={styles.buyButtonText}>Beli</Text>
           </TouchableOpacity>
@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
     tintColor: '#000',
   },
   header: {
-    marginTop: 120, // Adjust space from search bar to title
-    marginBottom: 20, // Add space between title and next section
+    marginTop: 120,
+    marginBottom: 20, 
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -168,18 +168,18 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   ratingContainer: {
-    flexDirection: 'row', // Align star images in a row
+    flexDirection: 'row', 
     marginVertical: 5,
   },
   star: {
-    width: 23, // Star width (edit to change size)
-    height: 20, // Star height (edit to change size)
-    marginLeft: 12, // Space between stars (edit to adjust)
+    width: 23, 
+    height: 20, 
+    marginLeft: 12, 
   },
   ratingNumber: {
-    fontSize: 16, // Size of the rating number
-    color: 'green', // Text color of the rating number
-    marginLeft: 5, // Space between stars and number
+    fontSize: 16, 
+    color: 'green', 
+    marginLeft: 5, 
   },
   quantityControls: {
     flexDirection: 'row',
@@ -223,20 +223,20 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginVertical: 10,
-    alignSelf: 'flex-start', // Align "Deskripsi" to the left
-    marginLeft: 12, // Add some left margin for spacing
+    alignSelf: 'flex-start', 
+    marginLeft: 12, 
   },
   productDescription: {
     fontSize: 16,
     color: '#333',
-    textAlign: 'left', // Align description text to the left
+    textAlign: 'left',
     marginBottom: 20,
     marginLeft: 8,
   },
   readMoreText: {
     fontSize: 16,
-    color: 'blue', // Blue color for the "Read more" text
-    textDecorationLine: 'underline', // Underline the "Read more" text
+    color: 'blue', 
+    textDecorationLine: 'underline', 
   },
   buttonContainer: {
     flexDirection: 'row',

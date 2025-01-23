@@ -22,12 +22,12 @@ const DetailDokter = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Back Button */}
+     
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
         <Image source={require('../assets/icons/back.png')} style={styles.backIcon} />
       </TouchableOpacity>
 
-      {/* Search Bar */}
+     
       <View style={styles.searchContainer}>
         <Image source={require('../assets/icons/search.png')} style={styles.searchIcon} />
         <TextInput
@@ -39,11 +39,11 @@ const DetailDokter = ({ navigation }) => {
         />
       </View>
 
-      {/* Title */}
+    
       <Text style={styles.title}>Rekomendasi Dokter</Text>
       <Text style={styles.subtitle}>Konsultasi online dengan dokter siaga kami</Text>
 
-      {/* Doctor List */}
+   
       <View style={styles.doctorGrid}>
         {filteredDoctors.map((doctor, index) => (
           <View key={index} style={styles.doctorCard}>

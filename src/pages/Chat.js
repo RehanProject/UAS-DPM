@@ -48,7 +48,7 @@ const Chat = ({ navigation }) => {
         <View style={styles.infoBox}>
           <View style={styles.avatarContainer}>
             <Image
-              source={require('../assets/icons/rishi.png')} // Ganti dengan gambar dokter yang sesuai
+              source={require('../assets/icons/rishi.png')}
               style={styles.avatar}
             />
             <View style={styles.statusIcon}>
@@ -67,7 +67,7 @@ const Chat = ({ navigation }) => {
       <TouchableOpacity onPress={navigateToChat2} style={styles.chatBox}>
         <View style={styles.infoBox}>
           <Image
-            source={require('../assets/icons/vana.png')} // Ganti dengan gambar dokter yang sesuai
+            source={require('../assets/icons/vana.png')} 
             style={styles.avatar}
           />
           <View style={styles.infoTextContainer}>
@@ -81,7 +81,7 @@ const Chat = ({ navigation }) => {
       <TouchableOpacity onPress={navigateToChat2} style={styles.chatBox}>
         <View style={styles.infoBox}>
           <Image
-            source={require('../assets/icons/arashi.png')} // Ganti dengan gambar dokter yang sesuai
+            source={require('../assets/icons/arashi.png')} 
             style={styles.avatar}
           />
           <View style={styles.infoTextContainer}>
@@ -95,7 +95,7 @@ const Chat = ({ navigation }) => {
       <TouchableOpacity onPress={navigateToChat2} style={styles.chatBox}>
         <View style={styles.infoBox}>
           <Image
-            source={require('../assets/icons/ranti.png')} // Ganti dengan gambar dokter yang sesuai
+            source={require('../assets/icons/ranti.png')} 
             style={styles.avatar}
           />
           <View style={styles.infoTextContainer}>
@@ -109,7 +109,7 @@ const Chat = ({ navigation }) => {
       <TouchableOpacity onPress={navigateToChat2} style={styles.chatBox}>
         <View style={styles.infoBox}>
           <Image
-            source={require('../assets/icons/vana.png')} // Ganti dengan gambar dokter yang sesuai
+            source={require('../assets/icons/vana.png')} 
             style={styles.avatar}
           />
           <View style={styles.infoTextContainer}>
@@ -123,7 +123,7 @@ const Chat = ({ navigation }) => {
       <TouchableOpacity onPress={navigateToChat2} style={styles.chatBox}>
         <View style={styles.infoBox}>
           <Image
-            source={require('../assets/icons/tirta.png')} // Ganti dengan gambar dokter yang sesuai
+            source={require('../assets/icons/tirta.png')} 
             style={styles.avatar}
           />
           <View style={styles.infoTextContainer}>
@@ -139,7 +139,7 @@ const Chat = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff', // White background for the whole page
+    backgroundColor: '#fff', 
   },
   backButton: {
     position: 'absolute',

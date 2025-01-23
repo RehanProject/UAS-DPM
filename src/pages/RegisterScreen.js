@@ -90,7 +90,7 @@ const RegisterScreen = ({ navigation }) => {
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
-        keyboardType="email-address" // Menampilkan keyboard untuk email
+        keyboardType="email-address" 
       />
 
       <TextInput
@@ -120,7 +120,7 @@ const RegisterScreen = ({ navigation }) => {
       <TextInput
         style={styles.input}
         placeholder="Umur"
-        keyboardType="numeric" // Mengarahkan keyboard ke angka
+        keyboardType="numeric" 
         value={age}
         onChangeText={setAge}
       />
@@ -134,7 +134,7 @@ const RegisterScreen = ({ navigation }) => {
         <Text style={styles.termsBlackBold}>Syarat dan Ketentuan kami.</Text>
       </Text>
 
-      {/* Modal for Gender Selection */}
+      
       <Modal
         transparent={true}
         visible={isGenderModalVisible}

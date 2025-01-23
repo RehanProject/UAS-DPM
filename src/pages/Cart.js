@@ -5,7 +5,7 @@ const Cart = ({ navigation }) => {
   // State untuk daftar item keranjang
   const [cartItems, setCartItems] = useState([
     { name: 'OBH Combi', size: '75ml', price: 5000, quantity: 1, image: require('../assets/icons/obh.png') },
-    // Tambahkan item lainnya sesuai kebutuhan
+    
   ]);
 
   // Fungsi untuk menangani klik pada status

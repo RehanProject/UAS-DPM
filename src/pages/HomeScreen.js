@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Impor AsyncStorage
+import AsyncStorage from '@react-native-async-storage/async-storage'; 
 
 const ServiceBox = ({ title, icon, backgroundColor, onPress }) => {
   return (

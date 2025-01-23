@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   highlightedStatus: {
-    color: '#34C759', // Warna hijau untuk "Dikemas"
+    color: '#34C759', 
   },
   emptyCartContainer: {
     justifyContent: 'center',

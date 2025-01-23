@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Alert } from 'react-native';
 
 const Layanan = ({ navigation }) => {
-  const [paymentSuccess, setPaymentSuccess] = useState(false); // For displaying payment success modal
+  const [paymentSuccess, setPaymentSuccess] = useState(false); 
 
-  // Function to show alert when a button is pressed
+  
   const showStatusAlert = (status) => {
     Alert.alert('Status Ambulance', `Status ambulance: ${status}`);
   };
@@ -76,7 +76,7 @@ const Layanan = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff', // White background for the whole page
+    backgroundColor: '#fff', 
   },
   backButton: {
     position: 'absolute',
@@ -101,13 +101,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
-    marginLeft: 16, // Position the status title a bit to the left
+    marginLeft: 16, 
   },
   statusBox: {
     marginBottom: 20,
-    padding: 10, // Smaller padding to reduce the box size
+    padding: 10, 
     borderRadius: 8,
-    backgroundColor: '#F5F6F6', // Light gray background for the status boxes
+    backgroundColor: '#F5F6F6', 
   },
   infoBox: {
     flexDirection: 'row',
@@ -127,10 +127,10 @@ const styles = StyleSheet.create({
   },
   inProgressButton: {
     backgroundColor: '#FFEB3B',
-    paddingVertical: 8, // Smaller padding
-    paddingHorizontal: 16, // Smaller padding
+    paddingVertical: 8,
+    paddingHorizontal: 16, 
     borderRadius: 8,
-    marginLeft: 'auto', // Align button to the right
+    marginLeft: 'auto',
   },
   inProgressButtonText: {
     fontSize: 14,
@@ -139,10 +139,10 @@ const styles = StyleSheet.create({
   },
   completedButton: {
     backgroundColor: '#4CAF50',
-    paddingVertical: 8, // Smaller padding
-    paddingHorizontal: 16, // Smaller padding
+    paddingVertical: 8, 
+    paddingHorizontal: 16, 
     borderRadius: 8,
-    marginLeft: 'auto', // Align button to the right
+    marginLeft: 'auto', 
   },
   completedButtonText: {
     fontSize: 14,
@@ -151,10 +151,10 @@ const styles = StyleSheet.create({
   },
   canceledButton: {
     backgroundColor: '#F44336',
-    paddingVertical: 8, // Smaller padding
-    paddingHorizontal: 16, // Smaller padding
+    paddingVertical: 8, 
+    paddingHorizontal: 16, 
     borderRadius: 8,
-    marginLeft: 'auto', // Align button to the right
+    marginLeft: 'auto', 
   },
   canceledButtonText: {
     fontSize: 14,

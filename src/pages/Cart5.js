@@ -41,7 +41,7 @@ const Cart5 = ({ navigation }) => {
           <TouchableOpacity
             key={index}
             style={styles.statusTab}
-            onPress={() => handleStatusClick(tab.status)} // Menambahkan onPress
+            onPress={() => handleStatusClick(tab.status)} 
           >
             <Image source={tab.icon} style={styles.statusIcon} />
             <Text style={[styles.statusText, tab.isHighlighted && styles.highlighted]}>{tab.status}</Text>

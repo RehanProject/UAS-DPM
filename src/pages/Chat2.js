@@ -49,12 +49,12 @@ const Chat2 = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Back Button */}
+    
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
         <Image source={require('../assets/icons/back.png')} style={styles.backIcon} />
       </TouchableOpacity>
 
-      {/* Header Section */}
+ 
       <View style={styles.header}>
         <View style={styles.headerLeft}>
           <Text style={styles.headerDoctorName}>Dr. Rishi</Text>
@@ -66,9 +66,8 @@ const Chat2 = ({ navigation }) => {
         </View>
       </View>
 
-      {/* Chat Background Section */}
       <View style={styles.chatBoxContainer}>
-        {/* Chat messages */}
+       
         <View style={styles.messageContainer}>
           {messages.map((message, index) => (
             <View
@@ -81,7 +80,6 @@ const Chat2 = ({ navigation }) => {
           ))}
         </View>
 
-        {/* Message Input Section */}
         <View style={styles.inputContainer}>
           <View style={styles.inputWithIcons}>
             <TextInput
