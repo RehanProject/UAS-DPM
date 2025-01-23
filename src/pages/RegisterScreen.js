@@ -1,18 +1,38 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Alert, Modal, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Alert, Modal, FlatList, Keyboard } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
+import AsyncStorage from '@react-native-async-storage/async-storage'; 
 
 const RegisterScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [address, setAddress] = useState(''); // Alamat
-  const [gender, setGender] = useState(''); // Jenis Kelamin
-  const [age, setAge] = useState(''); // Umur
-  const [isGenderModalVisible, setIsGenderModalVisible] = useState(false); // State to control modal visibility
+  const [address, setAddress] = useState(''); 
+  const [gender, setGender] = useState(''); 
+  const [age, setAge] = useState(''); 
+  const [isGenderModalVisible, setIsGenderModalVisible] = useState(false); 
 
+  // Validasi form
   const handleCreateAccount = async () => {
+    // Memastikan semua kolom diisi
+    if (!username || !email || !password || !address || !gender || !age) {
+      Alert.alert('Error', 'Semua kolom harus diisi');
+      return;
+    }
+
+   
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+      Alert.alert('Error', 'Email tidak valid');
+      return;
+    }
+
+    
+    if (isNaN(age) || age <= 0) {
+      Alert.alert('Error', 'Umur harus berupa angka yang valid');
+      return;
+    }
+
     // Menyimpan data pengguna ke AsyncStorage
     const userData = {
       username: username,
@@ -70,6 +90,7 @@ const RegisterScreen = ({ navigation }) => {
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
+        keyboardType="email-address" // Menampilkan keyboard untuk email
       />
 
       <TextInput
@@ -99,7 +120,7 @@ const RegisterScreen = ({ navigation }) => {
       <TextInput
         style={styles.input}
         placeholder="Umur"
-        keyboardType="numeric"
+        keyboardType="numeric" // Mengarahkan keyboard ke angka
         value={age}
         onChangeText={setAge}
       />

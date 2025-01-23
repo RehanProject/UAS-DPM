@@ -9,7 +9,7 @@ import LoginScreen from '../pages/LoginScreen';
 import RegisterScreen from '../pages/RegisterScreen';
 import HomeScreen from '../pages/HomeScreen';
 import PharmacyScreen from '../pages/PharmacyScreen';
-import Cart from '../pages/Cart'; // Pastikan Anda mengimpor Cart.js
+import Cart from '../pages/Cart'; 
 import DetailScreen from '../pages/DetailScreen'; 
 import LocationDetailScreen from '../pages/LocationDetailScreen';
 import LocationDetailScreen2 from '../pages/LocationDetailScreen2';
@@ -80,7 +80,7 @@ const HomeTabNavigator = () => {
       {/* Keranjang Tab */}
       <Tab.Screen
         name="Keranjang"
-        component={Cart} // Mengarahkan ke Cart.js
+        component={Cart} 
         options={{
           tabBarIcon: ({ focused }) => (
             <View style={{ alignItems: 'center' }}>
