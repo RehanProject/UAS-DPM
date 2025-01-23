@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { AppNavigator } from './src/router'; // Impor AppNavigator dari router/index.js
+import AppNavigator from './src/router/AppNavigator';
 
 const App = () => {
   return (
